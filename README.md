@@ -1,5 +1,5 @@
 # AnonAmazing.github.io
-#Free/Paid web hosting services
+# Free/Paid web hosting services
 
 # Plans
   A plan: Free
