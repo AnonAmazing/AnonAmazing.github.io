@@ -8,7 +8,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 			<body>
 				<h2>My CD Collection</h2>
 				<script>
-					console.log("Hello");
+					alert("Hello");
 				</script>
 				<table border="1">
 					<tr bgcolor="#9acd32">
