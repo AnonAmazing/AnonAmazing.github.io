@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<xs:schema targetNamespace="https://AnonAmazing.github.io/https/xxbl.xyz/2021/xxbl.xsd"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<!-- Plain Code -->
+	<xs:element name="code" type="xs:string" />
+
+	<!-- Directives (C/C++) and Dependencies -->
+	<xs:element name="dependencies">
+		<xs:complexType>
+			<xs:attribute name="name" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="define">
+		<xs:complexType mixed="true">
+			<xs:attribute name="name" type="xs:string" />
+			<xs:attribute name="value" type="xs:string" />
+			<xs:all>
+				<xs:element name="codeValue" type="code" />
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Operations -->
+	<xs:element name="return">
+		<xs:complexType>
+			<xs:attribute name="returnValue" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Functions -->
+	<xs:element "undeclareVar">
+		<xs:complexType>
+			<xs:attribute name="type" type="xs:string" />
+			<xs:attribute name="name" type="xs:string" />
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="var">
+		<xs:complexType mixed="true">
+			<xs:attribute name="type" type="xs:string" />
+			<xs:attribute name="name" type="xs:string" />
+			<xs:attribute name="value" type="xs:string" />
+			<xs:all>
+				<xs:element name="codeValue" type="code" />
+				<xs:element name="return" type="return">
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="const" type="var">
+	<xs:element name="void">
+		<xs:complexType mixed="true">
+			<xs:attribute name="name" type="xs:string" />
+			<xs:all>
+				<xs:element name="code" type="code" />
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+
+	<!-- Comments -->
+	<xs:element name="comment" />
+	<xs:element name="mathExpression">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="divide" type="xs:string" />
+				<xs:element name="power" type="xs:string" />
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
